@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<!--	
+/*!
+ * FileMaker WebDirect Custom Homepage by Harlow Technologies Inc.
+ * http://www.harlowtech.com/
+ *
+ * Copyright 2014 Harlow Technologies Inc.
+ * Released under the MIT license
+ * https://github.com/bharlow/fm-webdirect-custom/blob/master/LICENSE
+ *
+ * FileMaker is a trademark of FileMaker, Inc., registered in the U.S.and other countries. FileMaker WebDirect is a trademark of FileMaker, Inc.
+ *
+ * Date: 2014-07-24 23:00 PST
+ * Version: 1
+ */
+-->
+<meta charset="UTF-8">
+<title>FileMaker WebDirect HTML Example</title>
+<style type="text/css">
+	td { text-align:center; }
+	a.button {
+		display:block;
+		margin: 0 auto;
+		width: 200px;
+		height: 50px;
+		line-height: 50px;
+		background: #990000;
+		color: #FFCC00;
+		text-decoration: none;
+		font-size: 26px;
+		font-family: Arial;
+		font-weight: bold;	
+		border:2px solid #000000;
+		border-radius:25px;
+	}
+	a.button:hover{ background: #CC0000; }
+</style>
+<script type="text/javascript">
+	/*	Redirect to FileMaker WebDirect URL
+	 *	Comment out this code if you do not want it to automatically redirect on load of index page.	
+	 */
+	top.location.href = "http://fms.example.com/fmi/webd?homeurl=http://web.example.com/mysolution/logoff.html#MyDatabase";
+</script>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="3">
+	<tr>
+		<td><img src="logo.png" width="350" height="250" alt="Your Company Name Here" /></td>
+	</tr>
+	<tr>
+		<td><p><a class="button" href="http://fms.example.com/fmi/webd?homeurl=http://web.example.com/mysolution/logoff.html#MyDatabase">Login</a></p></td>
+	</tr>
+</table>
+</body>
+</html>
