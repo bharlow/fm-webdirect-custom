@@ -1,4 +1,4 @@
-# README #
+# FileMaker WebDirect Custom Homepage #
 
 This repository has been provided by [Harlow Technologies Inc.](http://www.harlowtech.com) as a service to the FileMaker community in making FileMaker WebDirect logins for our customers easier.
 
@@ -8,6 +8,7 @@ Below are the instructions for how to install and configure the HTML pages for c
 
 * Install Instructions
 * Web Directory Root Folder
+* How to Download these Files
 
 ### Install Instructions ###
 
@@ -27,17 +28,20 @@ The typical web server root folders for FileMaker Server can be found at:
 
 __For IIS (Windows) through HTTP or HTTPS__
 
-[drive]:\Program Files\FileMaker\FileMaker Server\HTTPServer\conf
-
-Where [drive] is the drive on which the Web Publishing Engine component of your FileMaker Server deployment resides.
+* [drive]:\Program Files\FileMaker\FileMaker Server\HTTPServer\conf
+* Where [drive] is the drive on which the Web Publishing Engine component of your FileMaker Server deployment resides.
 
 __For Apache (OS X) through HTTP__
 
-/Library/FileMaker Server/HTTPServer/htdocs
+* /Library/FileMaker Server/HTTPServer/htdocs
 
 __For Apache (OS X) through HTTPS__
 
-/Library/FileMaker Server/HTTPServer/htdocs/httpsRoot
+* /Library/FileMaker Server/HTTPServer/htdocs/httpsRoot
+
+### How to Download these Files ###
+
+Want to download and try these files out with your solution. Look for the "Download ZIP" link to the on the right hand side on [GitHub](https://github.com/bharlow/fm-webdirect-custom) page.
 
 ## Tips and Hints ##
 
@@ -45,10 +49,7 @@ When you update the web host or folder name the index.html needs to have it upda
 
 The URL Host Name or IP for the FileMaker Server can be different than the homeurl URL Host Name or IP. You must be sure to link the pages up appropriately.
 
-The full web direct guide can be found at:
-[FileMaker WebDirect PDF](https://fmhelp.filemaker.com/docs/13/en/fm13_webdirect_guide.pdf)
-
-Page 27 in the guide has official instructions on using the WebDirect custom homepage.
+The full web direct guide can be found at [FileMaker WebDirect PDF](https://fmhelp.filemaker.com/docs/13/en/fm13_webdirect_guide.pdf). Page 27 in the guide has official instructions on using the WebDirect custom homepage.
 
 ## Change Notes ##
 
@@ -60,6 +61,6 @@ Page 27 in the guide has official instructions on using the WebDirect custom hom
 Copyright 2014 Harlow Technologies Inc.
 
 * Released under the MIT license
-* https://github.com/bharlow/fm-webdirect-custom/blob/master/LICENSE
+* https://github.com/bharlow/fm-webdirect-custom/blob/master/LICENSE.txt
 
 FileMaker is a trademark of FileMaker, Inc., registered in the U.S.and other countries. FileMaker WebDirect is a trademark of FileMaker, Inc.
