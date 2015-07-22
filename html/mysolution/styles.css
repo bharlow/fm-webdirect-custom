@@ -1,7 +1,3 @@
-<!doctype html>
-<html>
-<head>
-<!--	
 /*!
  * FileMaker WebDirect Custom Homepage by Harlow Technologies Inc.
  * http://www.harlowtech.com/
@@ -15,12 +11,21 @@
  * Date: 2015-07-22 10:00 PST
  * Version: 1.1
  */
--->
-<meta charset="UTF-8">
-<title>FileMaker WebDirect Custom Homepage Example</title>
-</head>
-<body>
-	<h1>FileMaker WebDirect Custom Homepage Example</h1>
-	<p><a href="https://github.com/bharlow/fm-webdirect-custom">Visit GitHub for Current README.md</a></p>
-</body>
-</html>
+
+td { text-align:center; }
+a.button {
+	display:block;
+	margin: 0 auto;
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	background: #990000;
+	color: #FFCC00;
+	text-decoration: none;
+	font-size: 26px;
+	font-family: Arial;
+	font-weight: bold;	
+	border:2px solid #000000;
+	border-radius:25px;
+}
+a.button:hover{ background: #CC0000; }
