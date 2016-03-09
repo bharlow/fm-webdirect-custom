@@ -56,10 +56,11 @@ The full web direct guide can be found at [FileMaker WebDirect PDF](https://fmhe
 * Version 0: 05/14/2014 - Initial Creation and deployment
 * Version 1: 07/24/2014 - Addition of JavaScript Redirect to index.html
 * Version 1.1: 07/22/2015 - Moved Styles to their own styles.css file
+* Version 1.2: 03/09/2016 - Added Meta Tags for Caching and Robots
 
 ## Copyright ##
 
-Copyright 2015 Harlow Technologies Inc.
+Copyright 2016 Harlow Technologies Inc.
 
 * Released under the MIT license
 * https://github.com/bharlow/fm-webdirect-custom/blob/master/LICENSE.txt
