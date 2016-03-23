@@ -7,11 +7,16 @@
  * https://github.com/bharlow/fm-webdirect-custom/blob/master/LICENSE.txt
  *
  * FileMaker is a trademark of FileMaker, Inc., registered in the U.S.and other countries. FileMaker WebDirect is a trademark of FileMaker, Inc.
+ * Detect.js: User-Agent Parser (https://github.com/darcyclarke/Detect.js) is Dual licensed under the MIT and GPL licenses.
  *
- * Date: 2015-03-09 10:00 PST
- * Version: 1.2
+ * Date: 2015-03-23 10:00 PST
+ * Version: 1.3
  */
 
+/* Base Styles */
+body { 
+	font-family: Arial;
+}
 td { text-align:center; }
 a.button {
 	display:block;
@@ -23,9 +28,15 @@ a.button {
 	color: #FFCC00;
 	text-decoration: none;
 	font-size: 26px;
-	font-family: Arial;
 	font-weight: bold;	
 	border:2px solid #000000;
 	border-radius:25px;
 }
 a.button:hover{ background: #CC0000; }
+
+/* Browser Check */
+#browserInvalid,
+#browserValid { 
+	display:none; 
+}
+#browserInvalid p { text-align:center; }

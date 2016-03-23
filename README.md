@@ -53,10 +53,11 @@ The full web direct guide can be found at [FileMaker WebDirect PDF](https://fmhe
 
 ## Change Notes ##
 
-* Version 0: 05/14/2014 - Initial Creation and deployment
-* Version 1: 07/24/2014 - Addition of JavaScript Redirect to index.html
+* Version 0.0: 05/14/2014 - Initial Creation and deployment
+* Version 1.0: 07/24/2014 - Addition of JavaScript Redirect to index.html
 * Version 1.1: 07/22/2015 - Moved Styles to their own styles.css file
 * Version 1.2: 03/09/2016 - Added Meta Tags for Caching and Robots
+* Version 1.3: 03/23/2016 - Added JavaScript Browser Detection to help prevent browsers not compatible with WebDirect from using it
 
 ## Copyright ##
 
@@ -66,3 +67,5 @@ Copyright 2016 Harlow Technologies Inc.
 * https://github.com/bharlow/fm-webdirect-custom/blob/master/LICENSE.txt
 
 FileMaker is a trademark of FileMaker, Inc., registered in the U.S.and other countries. FileMaker WebDirect is a trademark of FileMaker, Inc.
+
+Detect.js: User-Agent Parser (https://github.com/darcyclarke/Detect.js) is Dual licensed under the MIT and GPL licenses.
