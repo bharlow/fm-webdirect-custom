@@ -49,7 +49,10 @@ When you update the web host or folder name the index.html needs to have it upda
 
 The URL Host Name or IP for the FileMaker Server can be different than the homeurl URL Host Name or IP. You must be sure to link the pages up appropriately.
 
-The full web direct guide can be found at [FileMaker WebDirect PDF](https://fmhelp.filemaker.com/docs/14/en/fm14_webdirect_guide.pdf). Page 28 in the guide has official instructions on using the WebDirect custom homepage.
+Official instructions on using the WebDirect custom homepage that can be found at: 
+* [FileMaker 13 WebDirect PDF - Starting at Page 26](https://fmhelp.filemaker.com/docs/13/en/fm13_webdirect_guide.pdf) 
+* [FileMaker 14 WebDirect PDF - Starting at Page 28](https://fmhelp.filemaker.com/docs/14/en/fm14_webdirect_guide.pdf) 
+* [FileMaker 15 WebDirect PDF - Starting at Page 27](https://fmhelp.filemaker.com/docs/15/en/fm15_webdirect_guide.pdf) 
 
 ## Change Notes ##
 
@@ -66,6 +69,6 @@ Copyright 2016 Harlow Technologies Inc.
 * Released under the MIT license
 * https://github.com/bharlow/fm-webdirect-custom/blob/master/LICENSE.txt
 
-FileMaker is a trademark of FileMaker, Inc., registered in the U.S.and other countries. FileMaker WebDirect is a trademark of FileMaker, Inc.
+FileMaker is a trademark of FileMaker, Inc., registered in the U.S. and other countries. FileMaker WebDirect is a trademark of FileMaker, Inc.
 
 Detect.js: User-Agent Parser (https://github.com/darcyclarke/Detect.js) is Dual licensed under the MIT and GPL licenses.
