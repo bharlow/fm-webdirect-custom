@@ -41,7 +41,7 @@ __For Apache (OS X) through HTTPS__
 
 ### How to Download these Files ###
 
-Want to download and try these files out with your solution. Look for the "Download ZIP" link to the on the right hand side on [GitHub](https://github.com/bharlow/fm-webdirect-custom) page.
+Want to download and try these files out with your solution. Look for the "Clone or download" button at the on the top of the [GitHub](https://github.com/bharlow/fm-webdirect-custom) page.
 
 ## Tips and Hints ##
 
