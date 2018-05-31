@@ -1,0 +1,44 @@
+/*!
+ * FileMaker WebDirect Custom Homepage by Harlow Technologies Inc.
+ * http://www.harlowtech.com/
+ *
+ * Copyright (c) 2016-2018 Harlow Technologies Inc.
+ * Released under the MIT license
+ * https://github.com/bharlow/fm-webdirect-custom/blob/master/LICENSE.txt
+ *
+ * FileMaker is a trademark of FileMaker, Inc., registered in the U.S.and other countries. FileMaker WebDirect is a trademark of FileMaker, Inc.
+ * Bower: Browser Detection (https://github.com/lancedikson/bowser) is licensed under the MIT license.
+ *
+ * Date: 2018-04-08 10:00 PST
+ * Version: 2
+ */
+
+/* Base Styles */
+body { 
+	font-family: Arial;
+}
+td { text-align:center; }
+a.button {
+	display:block;
+	margin: 0 auto;
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	background: #990000;
+	color: #FFCC00;
+	text-decoration: none;
+	font-size: 26px;
+	font-weight: bold;	
+	border:2px solid #000000;
+	border-radius:25px;
+}
+a.button:hover{ background: #CC0000; }
+
+/* Browser Check */
+#browserInvalid,
+#browserValid { 
+	display:none; 
+}
+#browserInvalid p { text-align:center; }
+#browserInvalid div { text-align: left; margin: 0px auto; display: inline-block; }
+#browserInvalid div ul { text-align:left; }

@@ -18,6 +18,7 @@ Below are the instructions for how to install and configure the HTML pages for c
     * FileMaker 14 = mysolution14
     * FileMaker 15 = mysolution15
     * FileMaker 16 = mysolution16-basic
+    * FileMaker 17 = mysolution17-basic
 3. On both files, make the following adjustments:
     1. If you are using https, update the url protocol to https from http on both the URL and URL parameter “homeurl”.
     2. Update the web host (example: fms.example.com) to the host name or IP you wish to use for the FileMaker Server.
@@ -56,7 +57,7 @@ Want to download and try these files out with your solution. Look for the "Clone
 * The URL Host Name or IP for the FileMaker Server can be different than the homeurl URL Host Name or IP. You must be sure to link the pages up appropriately.
 * All of the files listed in the folder inside the *html* folder are designed to be used at either the root of the web server or in a folder name of your choosing.
 * As of FileMaker 16, the url fragment character "#" is no longer supported. See [Miscellaneous behavior changes in FileMaker 16 Platform](http://help.filemaker.com/app/answers/detail/a_id/16316).
-* Microsoft Edge has two versions numbers that must be factored in, the Version of the Browser "38" and the Version of EdgeHTML "14.14342". Browser detection must check against EdgeHTML. See [Wikipedia - Microsoft Edge Release History] (https://en.wikipedia.org/wiki/Microsoft_Edge#Release_history) to translate the version FileMaker requires to the version the browser detection requires.
+* Microsoft Edge has two versions numbers that must be factored in, the Version of the Browser "38" and the Version of EdgeHTML "14.14342". Browser detection must check against EdgeHTML. See [Wikipedia - Microsoft Edge Release History](https://en.wikipedia.org/wiki/Microsoft_Edge#Release_history) to translate the version FileMaker requires to the version the browser detection requires.
 
 ## Official Documentation ##
 
@@ -65,6 +66,7 @@ Official documentation on using the WebDirect custom homepage that can be found 
 * [FileMaker 14 WebDirect PDF - Starting at Page 28](https://fmhelp.filemaker.com/docs/14/en/fm14_webdirect_guide.pdf#page=28) 
 * [FileMaker 15 WebDirect PDF - Starting at Page 27](https://fmhelp.filemaker.com/docs/15/en/fm15_webdirect_guide.pdf#page=27) 
 * [FileMaker 16 WebDirect Website](https://fmhelp.filemaker.com/docs/16/en/fmwd/)
+* [FileMaker 17 WebDirect Website](https://fmhelp.filemaker.com/docs/17/en/fmwd/)
 
 ## Change Notes ##
 
@@ -80,6 +82,7 @@ Official documentation on using the WebDirect custom homepage that can be found 
   * Removed Browser Detection https://github.com/darcyclarke/Detect.js due to no longer being maintained
   * Added Browser Detection https://github.com/lancedikson/bowser
   * Updated Copyright
+* Version 2.1: 5/31/2018 - Adjusted for EdgeHTML Version on browser check vs display of Edge Browser Version; Added FM 17 Info
 
 ## Copyright ##
 
