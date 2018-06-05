@@ -1,10 +1,13 @@
 # FileMaker WebDirect Custom Homepage - Examples #
 
+## FileMaker 17: Basic Version ##
+The folder titled __*mysolution17-basic*__ is a version designed for FileMaker 17 WebDirect. This version has the original redirection functionality from a prior version that takes the user to the FMS login screen.
+
 ## FileMaker 16: Basic Version ##
-The folder titled __*mysolution16-basic*__ is a version designed for FileMaker 16 WebDirect. This version has the original redirection functionality from prior version that take the user to the FMS login screen.
+The folder titled __*mysolution16-basic*__ is a version designed for FileMaker 16 WebDirect. This version has the original redirection functionality from a prior version that takes the user to the FMS login screen.
 
 ## FileMaker 15 ##
-The folder titled __*mysolution15*__ is a version designed for FileMaker 15 WebDirect.
+The folder titled __*mysolution15*__ is a version designed for FileMaker 15 WebDirect. *Note, this version is no longer maintained.*
 
 ## FileMaker 14 ##
 The folder titled __*mysolution14*__ is a version designed for FileMaker 14 WebDirect. *Note, this version is no longer maintained.*

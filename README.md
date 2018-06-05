@@ -84,7 +84,7 @@ Official documentation on using the WebDirect custom homepage that can be found 
   * Added Browser Detection https://github.com/lancedikson/bowser
   * Updated Copyright
 * Version 2.1: 05/31/2018 - Adjusted for EdgeHTML Version on browser check vs display of Edge Browser Version; Added FM 17 Info
-* Version 2.2: 06/05/2018 - Added IE 11 in Compatibility Mode error message.
+* Version 2.2: 06/05/2018 - Added IE 10 & 11 in Compatibility Mode error message.
 
 ## Copyright ##
 
