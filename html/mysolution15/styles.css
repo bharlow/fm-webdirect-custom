@@ -39,6 +39,6 @@ a.button:hover{ background: #CC0000; }
 #browserValid { 
 	display:none; 
 }
-#browserInvalid p { text-align:center; }
-#browserInvalid div { text-align: left; margin: 0px auto; display: inline-block; }
-#browserInvalid div ul { text-align:left; }
+.browserInvalid p { text-align:center; }
+.browserInvalid div { text-align: left; margin: 0px auto; display: inline-block; }
+.browserInvalid div ul { text-align:left; }

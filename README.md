@@ -58,6 +58,7 @@ Want to download and try these files out with your solution. Look for the "Clone
 * All of the files listed in the folder inside the *html* folder are designed to be used at either the root of the web server or in a folder name of your choosing.
 * As of FileMaker 16, the url fragment character "#" is no longer supported. See [Miscellaneous behavior changes in FileMaker 16 Platform](http://help.filemaker.com/app/answers/detail/a_id/16316).
 * Microsoft Edge has two versions numbers that must be factored in, the Version of the Browser "38" and the Version of EdgeHTML "14.14342". Browser detection must check against EdgeHTML. See [Wikipedia - Microsoft Edge Release History](https://en.wikipedia.org/wiki/Microsoft_Edge#Release_history) to translate the version FileMaker requires to the version the browser detection requires.
+* Microsoft Internet Explorer has a mode where Intranet sites are placed in compatibility mode. This by default sets the browser to behave as if it is IE 7 rather than IE 10 or 11. Notes with how to turn this mode off have been added to the HTML pages.
 
 ## Official Documentation ##
 
@@ -82,7 +83,8 @@ Official documentation on using the WebDirect custom homepage that can be found 
   * Removed Browser Detection https://github.com/darcyclarke/Detect.js due to no longer being maintained
   * Added Browser Detection https://github.com/lancedikson/bowser
   * Updated Copyright
-* Version 2.1: 5/31/2018 - Adjusted for EdgeHTML Version on browser check vs display of Edge Browser Version; Added FM 17 Info
+* Version 2.1: 05/31/2018 - Adjusted for EdgeHTML Version on browser check vs display of Edge Browser Version; Added FM 17 Info
+* Version 2.2: 06/05/2018 - Added IE 11 in Compatibility Mode error message.
 
 ## Copyright ##
 
