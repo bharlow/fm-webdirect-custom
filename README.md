@@ -77,7 +77,7 @@ Official documentation on using the WebDirect custom homepage that can be found 
 * Version 1.2: 03/09/2016 - Added Meta Tags for Caching and Robots
 * Version 1.3: 03/23/2016 - Added JavaScript Browser Detection to help prevent browsers not compatible with WebDirect from using it
 * Version 2.0: 04/08/2018
-  * Created FileMaker 16 specific version specific folders called: mysolution13, mysolution14, mysolution15, mysolution16-basic.
+  * Created FileMaker specific version specific folders called: mysolution13, mysolution14, mysolution15, mysolution16-basic.
   * Removed the mysolution folder.
   * Updated for FileMaker 16 changes to WebDirect URL Structure
   * Removed Browser Detection https://github.com/darcyclarke/Detect.js due to no longer being maintained
