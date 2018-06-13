@@ -2,7 +2,10 @@
 
 This repository has been provided by [Harlow Technologies Inc.](http://www.harlowtech.com) as a service to the FileMaker community in making FileMaker WebDirect logins for our customers easier.
 
-Below are the instructions for how to install and configure the HTML pages for custom FileMaker WebDirect login and logoff pages.
+Below are the instructions for how to install and configure the HTML pages for custom FileMaker WebDirect login, logoff and form pages.
+
+![FileMaker WebDirect Basic Login Example Page](images/fm-example-5.png) 
+![FileMaker WebDirect Form Login Example Page](images/fm-example-6.png)
 
 ## Installation ##
 
@@ -17,8 +20,8 @@ Below are the instructions for how to install and configure the HTML pages for c
     * FileMaker 13 = mysolution13
     * FileMaker 14 = mysolution14
     * FileMaker 15 = mysolution15
-    * FileMaker 16 = mysolution16-basic
-    * FileMaker 17 = mysolution17-basic
+    * FileMaker 16 = mysolution16-basic or mysolution16-form
+    * FileMaker 17 = mysolution17-basic or mysolution17-form
 3. On both files, make the following adjustments:
     1. If you are using https, update the url protocol to https from http on both the URL and URL parameter “homeurl”.
     2. Update the web host (example: fms.example.com) to the host name or IP you wish to use for the FileMaker Server.
@@ -66,7 +69,7 @@ For examples of how the [basic login screens appear](EXAMPLES.md) visit our exam
 
 ## Official Documentation ##
 
-Official documentation on using the WebDirect custom homepage that can be found at: 
+Official documentation on using the WebDirect custom homepage that can be found at:
 * [FileMaker 13 WebDirect PDF - Starting at Page 26](https://fmhelp.filemaker.com/docs/13/en/fm13_webdirect_guide.pdf#page=26) 
 * [FileMaker 14 WebDirect PDF - Starting at Page 28](https://fmhelp.filemaker.com/docs/14/en/fm14_webdirect_guide.pdf#page=28) 
 * [FileMaker 15 WebDirect PDF - Starting at Page 27](https://fmhelp.filemaker.com/docs/15/en/fm15_webdirect_guide.pdf#page=27) 
@@ -90,6 +93,7 @@ Official documentation on using the WebDirect custom homepage that can be found 
 * Version 2.1: 05/31/2018 - Adjusted for EdgeHTML Version on browser check vs display of Edge Browser Version; Added FM 17 Info
 * Version 2.2: 06/05/2018 - Added IE 10 & 11 in Compatibility Mode error message.
 * Version 2.3: 06/12/2018 - Added example screenshots for how screens can look on a web server.
+* Version 2.4: 06/13/2018 - Added Login Form version of custom login screens for FileMaker 16 and 17.
 
 ## Copyright ##
 
