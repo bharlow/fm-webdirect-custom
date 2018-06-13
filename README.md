@@ -93,6 +93,8 @@ Official documentation on using the WebDirect custom homepage that can be found 
 
 ## Copyright ##
 
+The Harlow Technologies logo design is the exclusive property of Harlow Technologies Inc. and is Copyright (c) 2018 Harlow Technologies Inc. All rights reserved.
+
 Copyright (c) 2016-2018 Harlow Technologies Inc.
 
 * Released under the MIT license
