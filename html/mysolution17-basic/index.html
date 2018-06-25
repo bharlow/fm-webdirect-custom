@@ -41,7 +41,7 @@
 		<td><img src="logo.png" width="350" height="250" alt="Your Company Name Here" /></td>
 	</tr>
 	<tr id="browserValid">
-		<td><p><a class="button" href="http://fms.example.com/fmi/webd/MyDatabase?homeurl=http://web.example.com/mysolution17-basic/logoff.html">Login</a></p></td>
+		<td><p><a class="button" id="login" href="">Login</a></p></td>
 	</tr>
 	<tr id="browserInvalid" class="browserInvalid">
 		<td>
@@ -96,12 +96,18 @@
 <!-- JavaScript -->
 <script type="text/javascript" src="bowser.min.js"></script>
 <script type="text/javascript">
+	
+	/* Default Variables
+	 */
+	var webdirectBrowser = true;
+	var webdirectHome = 'https://web.example.com/mysolution17-basic/index.html';
+	var webdirectURL = 'https://fms.example.com/fmi/webd/MyDatabase?homeurl='+webdirectHome;
+	var forceHTTPS = false;
+	
 	/* Detect Browser
 	 * Prevent Non-WebDirect Browsers from Accessing FileMaker
 	 * FMS 17: http://www.filemaker.com/products/filemaker-server/17-technical-specifications.html
 	 */
-	
-	var webdirectBrowser = true;
 	if( 
 		( bowser.msie == undefined && bowser.msedge == undefined && bowser.chrome == undefined && bowser.safari == undefined ) ||
 		( bowser.msie == true && bowser.version < 11 ) || 
@@ -116,13 +122,27 @@
 	} else {
 		document.getElementById('browserInvalid').style.display = 'none';
 		document.getElementById('browserValid').style.display = 'table-row';
+
+		/* OPTIONAL: Force to HTTPS if using HTTP
+		 * Good for servers where both HTTP and HTTPS are enabled and HTTP is not being forced to HTTPS
+		 * IMPORTANT: Make sure webdirectHome and webdirect is set to an HTTPS or browser will go into forever loop
+		 * To Force HTTPS set forceHTTPS = true;
+		 * To Allow HTTP set forceHTTPS = false;
+		 */
+		 if( forceHTTPS == true ){
+			if( document.location.protocol && document.location.protocol == 'http:' ){
+				window.location = webdirectHome;
+			}
+		}
+		document.getElementById('login').href = webdirectURL;
 	}
 
-	/*	Redirect to FileMaker WebDirect URL
-	 *	Comment out or remove this code if you do not want it to automatically redirect on load of index page.	
+	/* OPTIONAL: Redirect to FileMaker WebDirect URL
+	 * Comment out or remove this code if you do not want it to automatically redirect on load of index page.
+	 * If you do not wish to redirect, set variable webdirectBrowser = false
 	 */
 	if( webdirectBrowser == true ){
-		top.location.href = "http://fms.example.com/fmi/webd/MyDatabase?homeurl=http://web.example.com/mysolution17-basic/logoff.html";
+		window.location = webdirectURL;
 	}
 </script>
 

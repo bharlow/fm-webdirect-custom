@@ -62,6 +62,7 @@ Want to download and try these files out with your solution. Look for the "Clone
 * As of FileMaker 16, the url fragment character "#" is no longer supported. See [Miscellaneous behavior changes in FileMaker 16 Platform](http://help.filemaker.com/app/answers/detail/a_id/16316).
 * Microsoft Edge has two versions numbers that must be factored in, the Version of the Browser "38" and the Version of EdgeHTML "14.14342". Browser detection must check against EdgeHTML. See [Wikipedia - Microsoft Edge Release History](https://en.wikipedia.org/wiki/Microsoft_Edge#Release_history) to translate the version FileMaker requires to the version the browser detection requires.
 * Microsoft Internet Explorer has a mode where Intranet sites are placed in compatibility mode. This by default sets the browser to behave as if it is IE 7 rather than IE 10 or 11. Notes with how to turn this mode off have been added to the HTML pages.
+* Some web servers allow both HTTP and HTTPS access to the same pages. If this is the case, it is best if you can force the user to use HTTPS at the web server level. If this cannot be done, you can leverage an optional JavaScript to check and force a user to HTTPS.
 
 ## Examples ##
 
@@ -94,6 +95,7 @@ Official documentation on using the WebDirect custom homepage that can be found 
 * Version 2.2: 06/05/2018 - Added IE 10 & 11 in Compatibility Mode error message.
 * Version 2.3: 06/12/2018 - Added example screenshots for how screens can look on a web server.
 * Version 2.4: 06/13/2018 - Added Login Form version of custom login screens for FileMaker 16 and 17.
+* Version 2.5: 06/25/2018 - Added an optional JavaScript to force HTTPS for servers that allow the user to access HTTP and HTTPS versions of the site.
 
 ## Copyright ##
 

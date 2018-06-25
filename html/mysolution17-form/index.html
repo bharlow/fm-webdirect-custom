@@ -42,7 +42,7 @@
 	</tr>
 	<tr id="browserValid">
 		<td>
-			<form action="https://fms.example.com/fmi/webd/MyDatabase?homeurl=https://web.example.com/mysolution17-form/index.html" class="login-form" autocomplete="off" method="post">
+			<form action="" id="login" class="login-form" autocomplete="off" method="post">
 				<fieldset>
 					<legend>My Solution Login</legend>
 					<div class="row">
@@ -113,12 +113,18 @@
 <!-- JavaScript -->
 <script type="text/javascript" src="bowser.min.js"></script>
 <script type="text/javascript">
+	
+	/* Default Variables
+	 */
+	var webdirectBrowser = true;
+	var webdirectHome = 'https://web.example.com/mysolution17-form/index.html';
+	var webdirectURL = 'https://fms.example.com/fmi/webd/MyDatabase?homeurl='+webdirectHome;
+	var forceHTTPS = false;
+
 	/* Detect Browser
 	 * Prevent Non-WebDirect Browsers from Accessing FileMaker
 	 * FMS 17: http://www.filemaker.com/products/filemaker-server/17-technical-specifications.html
 	 */
-	
-	var webdirectBrowser = true;
 	if( 
 		( bowser.msie == undefined && bowser.msedge == undefined && bowser.chrome == undefined && bowser.safari == undefined ) ||
 		( bowser.msie == true && bowser.version < 11 ) || 
@@ -133,6 +139,20 @@
 	} else {
 		document.getElementById('browserInvalid').style.display = 'none';
 		document.getElementById('browserValid').style.display = 'table-row';
+
+		/* OPTIONAL: Force to HTTPS if using HTTP
+	 	 * Good for servers where both HTTP and HTTPS are enabled and HTTP is not being forced to HTTPS
+	 	 * IMPORTANT: Make sure webdirectHome and webdirect is set to an HTTPS or browser will go into forever loop
+	 	 * If you do not wish to force to HTTPS, set variable forceHTTPS = false
+	 	 */
+		if( forceHTTPS == true ){
+			if( document.location.protocol && document.location.protocol == 'http:' ){
+				window.location = webdirectHome;
+			}
+		}
+
+		// Set Login Form Action to WebDirect URL
+		document.getElementById('login').action = webdirectURL;
 	}
 </script>
 
