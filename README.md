@@ -54,6 +54,15 @@ __For Apache (OS X) through HTTPS__
 
 Want to download and try these files out with your solution. Look for the "Clone or download" button at the on the top of the [GitHub](https://github.com/bharlow/fm-webdirect-custom) page.
 
+## Bugs ##
+Currently, on the HTTP Form Post method, there appears to be a bug in FileMaker Server when a user logins with the incorrect credentials. The FileMaker Server appears to append the server URL before the full request URL, which results in an invalid domain name. We are working creating a simple workaround but in the mean time we will be reporting this issue to FileMaker. If this is impacting your solution, feel free to also report it to FileMaker (__*especially if you are at DevCon this week*__).
+
+Example Request URL for HTTP Post to FileMaker
+https://fms.example.com/fmi/webd/webd-example?homeurl=https://web.example.com/webd-custom/index.html
+
+Example Response URL for HTTP Post from FileMaker
+https://fms.example.comhttps://web.example.com/webd-custom/index.html?homeurl=https://web.example.com/webd-custom/index.html&db=webd-example&loginerr=212&guesten=0
+
 ## Tips and Hints ##
 
 * When you update the web host or folder name the index.html needs to have it updated in two locations while the logoff.html only has one location.
