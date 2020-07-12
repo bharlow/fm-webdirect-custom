@@ -13,13 +13,13 @@
  * FileMaker is a trademark of FileMaker, Inc., registered in the U.S.and other countries. FileMaker WebDirect is a trademark of FileMaker, Inc.
  * Bower: Browser Detection (https://github.com/lancedikson/bowser) is licensed under the MIT license.
  *
- * Date: 2020-07-11 15:00 PST
- * Version: 2.4
+ * Date: 2020-07-11 10:00 PST
+ * Version: 2.6
  * 
  */
 -->
 <meta charset="UTF-8">
-<title>FileMaker WebDirect Custom Login Form Homepage: FMS 16</title>
+<title>FileMaker WebDirect Custom Login Form Homepage: FMS 19</title>
 
 <!-- Page Cache -->
 <meta http-equiv="cache-control" content="max-age=0">
@@ -39,6 +39,9 @@
 <table width="100%" border="0" cellspacing="0" cellpadding="3">
 	<tr>
 		<td><img src="logo.png" width="350" height="250" alt="Your Company Name Here" /></td>
+	</tr>
+	<tr id="browserError">
+		<td id="browserErrorTd"></td>
 	</tr>
 	<tr id="browserValid">
 		<td>
@@ -62,15 +65,25 @@
 	</tr>
 	<tr id="browserInvalid" class="browserInvalid">
 		<td>
-			<p>We're sorry, the browser you are using is not compatible with FileMaker 16 WebDirect.</p>
+			<p>We're sorry, the browser you are using is not compatible with FileMaker 19 WebDirect.</p>
 			<p>Please use one of the following browsers:</p>
 			<div>
 				<hr>
 				<ul>
-					<li>Apple Safari 10 or higher</li>
-					<li>Google Chrome 55 or higher</li>
-					<li>Microsoft Edge 38 or higher</li>
-					<li>Microsoft Internet Explorer 11 or higher</li>
+					<li>Desktop:
+						<ul>
+							<li>Apple Safari 13 or higher</li>
+							<li>Google Chrome 80 or higher</li>
+							<li>Microsoft Edge 44 or higher</li>
+							<li>New Microsoft Edge 80 or higher</li>
+						</ul>
+					</li>
+					<li>Mobile:
+						<ul>
+							<li>Apple Mobile Safari 13 or higher</li>
+							<li>Google Chrome 80 or higher on Android OS 7 or higher</li>
+						</ul>
+					</li>
 				</ul>
 				<hr>
 			</div>
@@ -83,28 +96,27 @@
 <table align="center" border="0" cellspacing="0" cellpadding="3">
 	<tr id="browserIe7" class="browserInvalid">
 		<td>
-			<p>We're sorry, Internet Explorer 7 or Internet Explorer 11 in Compatibility Mode is not compatible with FileMaker 16 WebDirect.</p>
+			<p>We're sorry, Internet Explorer 7 or Internet Explorer 11 in Compatibility Mode is not compatible with FileMaker 19 WebDirect.</p>
 			<p>Please use one of the following browsers:</p>
 			<div>
 				<hr>
 				<ul>
-					<li>Apple Safari 10 or higher</li>
-					<li>Google Chrome 55 or higher</li>
-					<li>Microsoft Edge 38 or higher</li>
-					<li>Microsoft Internet Explorer 11 or higher with compatibility mode turned off</li>
+					<li>Desktop:
+						<ul>
+							<li>Apple Safari 13 or higher</li>
+							<li>Google Chrome 80 or higher</li>
+							<li>Microsoft Edge 44 or higher</li>
+							<li>New Microsoft Edge 80 or higher</li>
+						</ul>
+					</li>
+					<li>Mobile:
+						<ul>
+							<li>Apple Mobile Safari 13 or higher</li>
+							<li>Google Chrome 80 or higher on Android OS 7 or higher</li>
+						</ul>
+					</li>
 				</ul>
-				<hr>
 			</div>
-			<h2>How do I turn off compatibility mode in Internet Explorer?</h2>
-			<p><strong>Step 1.</strong> Go to the Gear Icon in IE.</p>
-			<p><img src="images/ie11-compatibility-1.png" alt="Internet Explorer Browser Bar with Gear Icon "></p>
-			<p><strong>Step 2.</strong> Select "Compatibility View settings" from the menu</p>
-			<p><img src="images/ie11-compatibility-2.png" alt="Internet Explorer Tools Menu"></p>
-			<p><strong>Step 3.</strong> Uncheck "Display intranet sites in Compatibility Mode"</p>
-			<p><img src="images/ie11-compatibility-3.png" alt="Internet Explorer Compatibility Mode Menu"></p>
-			<hr>
-			<h2>If I cannot turn off compatibility mode, what can I do?</h2>
-			<p>Use one of the listed browsers above. We recommend using <a href="https://www.google.com/chrome/">Google Chrome</a>.</p>
 		</td>
 	</tr>
 </table>
@@ -113,29 +125,37 @@
 <!-- JavaScript -->
 <script type="text/javascript" src="bowser.min.js"></script>
 <script type="text/javascript">
-	
 	/* Default Variables
 	 */
-	var webdirectBrowser = true;
-	var webdirectHome = 'https://web.example.com/mysolution16-form/index.html';
+	var webdirectHome = 'https://web.example.com/mysolution19-form/index.html';
 	var webdirectURL = 'https://fms.example.com/fmi/webd/MyDatabase?homeurl='+webdirectHome;
-	var forceHTTPS = false;
+	var forceHTTPS = true;
+	
+	/* Bowser Settings
+	 */
+	const filemaker = {
+		desktop: {
+			safari: '>=13',
+			chrome: '>=80',
+			edge: '>=18', 			// Old EdgeHTML 18.17763 = Edge 44
+			microsoftedge: '>=80' 	// New Edge
+		},
+		mobile: {
+			safari: '>=13',
+			chrome: '>=80'
+		}
+	}
+	const browser = bowser.getParser(window.navigator.userAgent);
+	const platform = browser.satisfies( filemaker );
 
 	/* Detect Browser
 	 * Prevent Non-WebDirect Browsers from Accessing FileMaker
-	 * FMS 16: http://www.filemaker.com/products/filemaker-server/server-16-specifications.html
+	 * FMS 19: https://community.claris.com/en/s/article/FileMaker-Server-19-System-Requirements
 	 */
-	if( 
-		( bowser.msie == undefined && bowser.msedge == undefined && bowser.chrome == undefined && bowser.safari == undefined ) ||
-		( bowser.msie == true && bowser.version < 11 ) || 
-		( bowser.msedge == true && bowser.version < 14.14342 ) || 
-		( bowser.chrome == true && bowser.version < 55 ) || 
-		( bowser.safari == true && bowser.version < 10 ) 
-	) {
-		webdirectBrowser = false;
+	 if( platform == false ) {
 		document.getElementById('browserInvalid').style.display = 'table-row';
 		document.getElementById('browserValid').style.display = 'none';
-		document.getElementById('browser-version').innerHTML = '<strong>Your browser is</strong> '+bowser.name+': '+bowser.version;
+		document.getElementById('browser-version').innerHTML = '<strong>Your browser is</strong> '+browser.getBrowserName()+': '+browser.getBrowserVersion();
 	} else {
 		document.getElementById('browserInvalid').style.display = 'none';
 		document.getElementById('browserValid').style.display = 'table-row';
@@ -153,6 +173,22 @@
 
 		// Set Login Form Action to WebDirect URL
 		document.getElementById('login').action = webdirectURL;
+
+		// Login Errors
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		if( urlParams.has('loginerr') == true ){
+			if( urlParams.get('loginerr') == "212" ){
+				document.getElementById('browserError').style.display = 'table-row';
+				document.getElementById("browserErrorTd").innerHTML = '<strong style="color:red;">Incorrect Login, please try again.</strong>';
+			} else {
+				document.getElementById('browserError').style.display = 'table-row';
+				document.getElementById("browserErrorTd").innerHTML = '<strong style="color:red;">Error Code: '+urlParams.get('loginerr')+'</strong>';
+			}
+		} else {
+			document.getElementById('browserError').style.display = 'none';
+			document.getElementById("browserErrorTd").innerHTML = '';
+		}
 	}
 </script>
 

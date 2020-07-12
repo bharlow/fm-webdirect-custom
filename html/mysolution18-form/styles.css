@@ -9,34 +9,77 @@
  * FileMaker is a trademark of FileMaker, Inc., registered in the U.S.and other countries. FileMaker WebDirect is a trademark of FileMaker, Inc.
  * Bower: Browser Detection (https://github.com/lancedikson/bowser) is licensed under the MIT license.
  *
- * Date: 2018-04-08 10:00 PST
- * Version: 2
+ * Date: 2020-07-11 10:00 PST
+ * Version: 2.6
  */
 
 /* Base Styles */
 body { 
 	font-family: Arial;
+	font-size: 16px;
 }
 td { text-align:center; }
 a.button {
-	display:block;
-	margin: 0 auto;
-	width: 200px;
-	height: 50px;
-	line-height: 50px;
 	background: #990000;
+	border: 2px solid #000000;
+	border-radius: 25px;
 	color: #FFCC00;
-	text-decoration: none;
+	display: block;
 	font-size: 26px;
 	font-weight: bold;	
-	border:2px solid #000000;
-	border-radius:25px;
+	height: 50px;
+	line-height: 50px;
+	margin: 0 auto;
+	text-decoration: none;
+	width: 200px;
 }
 a.button:hover{ background: #CC0000; }
 
+/* Form Styles */
+.login-form{
+	margin: 0 auto;
+	width: 380px;
+}
+.login-form fieldset {
+	border: 1px solid #000000;
+}
+.login-form fieldset legend {
+	font-weight: bold;
+	text-align: left;
+}
+.login-form .row {
+	display: block;
+	height: 24px;
+	padding: 5px 0;
+}
+.login-form .row label {
+	font-weight: bold;
+	line-height: 28px;
+	width: 90px;
+}
+.login-form .row input.field {
+	border: 1px solid #000000;
+	float: right;
+	font-size: 16px;
+	padding: 4px;
+	width: 252px;
+}
+.login-form .row input.button {
+	background: #555555;
+	border: 1px solid #000000;
+	color: #FFFFFF;
+	display:block;
+	float: right;
+	font-size: 16px;
+	line-height: 23px;
+	margin: 5px 0 0 0;
+	text-decoration: none;
+}
+
 /* Browser Check */
 #browserInvalid,
-#browserValid { 
+#browserValid,
+#browserError { 
 	display:none; 
 }
 .browserInvalid p { text-align:center; }
