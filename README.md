@@ -4,7 +4,7 @@ This repository has been provided by [Harlow Technologies Inc.](http://www.harlo
 
 Below are the instructions for how to install and configure the HTML pages for custom FileMaker WebDirect login, logoff and form pages.
 
-![FileMaker WebDirect Basic Login Example Page](images/fm-example-5.png) 
+![FileMaker WebDirect Basic Login Example Page](images/fm-example-5.png)
 ![FileMaker WebDirect Form Login Example Page](images/fm-example-6.png)
 
 ## Installation ##
@@ -96,28 +96,7 @@ Official documentation on using the WebDirect custom homepage that can be found 
 
 ## Change Notes ##
 
-* Version 0.0: 05/14/2014 - Initial Creation and deployment
-* Version 1.0: 07/24/2014 - Addition of JavaScript Redirect to index.html
-* Version 1.1: 07/22/2015 - Moved Styles to their own styles.css file
-* Version 1.2: 03/09/2016 - Added Meta Tags for Caching and Robots
-* Version 1.3: 03/23/2016 - Added JavaScript Browser Detection to help prevent browsers not compatible with WebDirect from using it
-* Version 2.0: 04/08/2018
-  * Created FileMaker specific version specific folders called: mysolution13, mysolution14, mysolution15, mysolution16-basic.
-  * Removed the mysolution folder.
-  * Updated for FileMaker 16 changes to WebDirect URL Structure
-  * Removed Browser Detection https://github.com/darcyclarke/Detect.js due to no longer being maintained
-  * Added Browser Detection https://github.com/lancedikson/bowser
-  * Updated Copyright
-* Version 2.1: 05/31/2018 - Adjusted for EdgeHTML Version on browser check vs display of Edge Browser Version; Added FM 17 Info
-* Version 2.2: 06/05/2018 - Added IE 10 & 11 in Compatibility Mode error message.
-* Version 2.3: 06/12/2018 - Added example screenshots for how screens can look on a web server.
-* Version 2.4: 06/13/2018 - Added Login Form version of custom login screens for FileMaker 16 and 17.
-* Version 2.5: 06/25/2018 - Added an optional JavaScript to force HTTPS for servers that allow the user to access HTTP and HTTPS versions of the site.
-* Version 2.6: 07/11/2020
-  * Added FM 18 and FM 19 versions.
-  * Updated browser detection to Bowser 2 for FM 18 & 19 due to new browser requirements.
-  * Updated URL's for claris.com for some URLs
-  * Updated Copyright.
+See [CHANGELOG.md](CHANGELOG.md) for all changes.
 
 ## Copyright ##
 
