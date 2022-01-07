@@ -32,7 +32,7 @@
 <meta name="robots" content="noindex,nofollow">
 
 <!-- CSS -->
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="custom.css">
 
 </head>
 <body>
@@ -152,7 +152,7 @@
 	 * Prevent Non-WebDirect Browsers from Accessing FileMaker
 	 * FMS 19: https://community.claris.com/en/s/article/FileMaker-Server-19-System-Requirements
 	 */
-	 if( platform == false ) {
+	 if( platform == false || platform == undefined ) {
 		document.getElementById('browserInvalid').style.display = 'table-row';
 		document.getElementById('browserValid').style.display = 'none';
 		document.getElementById('browser-version').innerHTML = '<strong>Your browser is</strong> '+browser.getBrowserName()+': '+browser.getBrowserVersion();

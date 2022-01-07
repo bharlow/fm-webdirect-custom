@@ -32,7 +32,7 @@
 <meta name="robots" content="noindex,nofollow">
 
 <!-- CSS -->
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="custom.css">
 
 </head>
 <body>
@@ -61,7 +61,7 @@
 					<li>Mobile:
 						<ul>
 							<li>Apple Mobile Safari 13 or higher</li>
-							<li>Google Chrome 72 or higher on Android OS 7 or higher</li>
+							<li>Google Chrome 80 or higher on Android OS 7 or higher</li>
 						</ul>
 					</li>
 				</ul>
@@ -92,7 +92,7 @@
 					<li>Mobile:
 						<ul>
 							<li>Apple Mobile Safari 13 or higher</li>
-							<li>Google Chrome 72 or higher on Android OS 7 or higher</li>
+							<li>Google Chrome 80 or higher on Android OS 7 or higher</li>
 						</ul>
 					</li>
 				</ul>
@@ -134,7 +134,7 @@
 	 * Prevent Non-WebDirect Browsers from Accessing FileMaker
 	 * FMS 19: https://community.claris.com/en/s/article/FileMaker-Server-19-System-Requirements
 	 */
-	 if( platform == false ) {
+	 if( platform == false || platform == undefined ) {
 		webdirectBrowser = false;
 		document.getElementById('browserInvalid').style.display = 'table-row';
 		document.getElementById('browserValid').style.display = 'none';

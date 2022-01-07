@@ -56,15 +56,27 @@ __For Apache (OS X) through HTTPS__
 
 Want to download and try these files out with your solution. Look for the "Clone or download" button at the on the top of the [GitHub](https://github.com/bharlow/fm-webdirect-custom) page.
 
+### FileMaker 19.4.x Custom Homepage Redirect Configuration ###
+
+As of FileMaker Server 19.4.1, the introduction of an Allow-List for greater control of URL's which can be used as a HomeURL in WebDirect was made, however this causes additional configuration. Below is a link from Claris Support on how to configure the new settings for FileMaker 19.4.x.
+
+[Claris Support: HomeURL parameters in FileMaker Server 19.4.1](https://support.claris.com/s/article/HomeURL-parameters-in-FileMaker-Server-19-4-1)
+
 ## Bugs ##
+
+### Naming of CSS File ###
+
+As of FileMaker Server 19.4.x, it has been reported that the web file break any CSS file that **contains** the name _style_ as part of the filename. This appears to be part of a redirection on the FileMaker Server. The temporary fix is to rename the CSS file style.css and update the approprate HTML files with the new filename.
+
+### HTTP Form Post Bug ###
 
 On the HTTP Form Post method, there appears to be a bug in FileMaker Server (versions prior to 19) when a user logins with the incorrect credentials. The FileMaker Server appears to append the server URL before the full request URL, which results in an invalid domain name. **This appears to be resolved in FileMaker 19, but remains in FileMaker 16 - 18.**
 
-### Example Request URL for HTTP Post to FileMaker ###
+#### Example Request URL for HTTP Post to FileMaker ####
 
 https://fms.example.com/fmi/webd/webd-example?homeurl=https://web.example.com/webd-custom/index.html
 
-### Example Response URL for HTTP Post from FileMaker ###
+#### Example Response URL for HTTP Post from FileMaker ####
 
 https://fms.example.comhttps://web.example.com/webd-custom/index.html?homeurl=https://web.example.com/webd-custom/index.html&db=webd-example&loginerr=212&guesten=0
 
