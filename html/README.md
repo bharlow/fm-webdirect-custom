@@ -1,5 +1,17 @@
 # FileMaker WebDirect Custom Homepage - Examples #
 
+## FileMaker 19: Basic Version ##
+The folder titled __*mysolution19-basic*__ is a version designed for FileMaker 19 WebDirect. This version has the original redirection functionality from a prior version that takes the user to the FMS login screen.
+
+## FileMaker 19: Login Form Version ##
+The folder titled __*mysolution19-form*__ is a version designed for FileMaker 19 WebDirect. This version has a custom login form using the HTTP POST feature for WebDirect rather than the Launch Center.
+
+## FileMaker 18: Basic Version ##
+The folder titled __*mysolution18-basic*__ is a version designed for FileMaker 18 WebDirect. This version has the original redirection functionality from a prior version that takes the user to the FMS login screen.
+
+## FileMaker 18: Login Form Version ##
+The folder titled __*mysolution18-form*__ is a version designed for FileMaker 18 WebDirect. This version has a custom login form using the HTTP POST feature for WebDirect rather than the Launch Center.
+
 ## FileMaker 17: Basic Version ##
 The folder titled __*mysolution17-basic*__ is a version designed for FileMaker 17 WebDirect. This version has the original redirection functionality from a prior version that takes the user to the FMS login screen.
 
