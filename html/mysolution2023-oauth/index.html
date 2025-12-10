@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+<!--	
+/*!
+ * FileMaker WebDirect Custom Homepage by Harlow Technologies Inc.
+ * http://www.harlowtech.com/
+ *
+ * Copyright (c) 2016-2025 Harlow Technologies Inc.
+ * Released under the MIT license
+ * https://github.com/bharlow/fm-webdirect-custom/blob/master/LICENSE.txt
+ *
+ * FileMaker is a trademark of FileMaker, Inc., registered in the U.S.and other countries. FileMaker WebDirect is a trademark of FileMaker, Inc.
+ * Bower: Browser Detection (https://github.com/lancedikson/bowser) is licensed under the MIT license.
+ */
+-->
+<meta charset="UTF-8">
+<title>FileMaker WebDirect Custom Oauth Homepage: FMS 2023</title>
+
+<!-- Page Cache -->
+<meta http-equiv="cache-control" content="max-age=0">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="expires" content="Tue, 01 Jan 202380 1:00:00 GMT">
+<meta http-equiv="pragma" content="no-cache">
+
+<!-- Robots -->
+<meta name="robots" content="noindex,nofollow">
+
+<!-- CSS -->
+<link rel="stylesheet" href="custom.css">
+
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="3">
+	<tr>
+		<td><img src="logo.png" width="350" height="250" alt="Your Company Name Here" /></td>
+	</tr>
+	<tr id="browserError">
+		<td id="browserErrorTd"></td>
+	</tr>
+	<tr id="browserValid">
+		<td id="oauth">
+			
+		</td>
+	</tr>
+	<tr id="browserInvalid" class="browserInvalid">
+		<td>
+			<p>We're sorry, the browser you are using is not compatible with FileMaker 2023 WebDirect.</p>
+			<p>Please use one of the following browsers:</p>
+			<div>
+				<hr>
+				<ul>
+					<li>Desktop:
+						<ul>
+							<li>Safari 16 or higher</li>
+							<li>Chrome 108 or higher</li>
+							<li>Microsoft Edge 108 or higher</li>
+						</ul>
+					</li>
+					<li>Mobile:
+						<ul>
+							<li>Mobile Safari 16 or higher</li>
+							<li>Chrome 108 or higher</li>
+						</ul>
+					</li>
+				</ul>
+				<hr>
+			</div>
+			<p id="browser-version"></p>
+		</td>
+	</tr>
+</table>
+
+<!--[if lte IE 7]>
+<table align="center" border="0" cellspacing="0" cellpadding="3">
+	<tr id="browserIe7" class="browserInvalid">
+		<td>
+			<p>We're sorry, Internet Explorer 7 or Internet Explorer 11 in Compatibility Mode is not compatible with FileMaker 2023 WebDirect.</p>
+			<p>Please use one of the following browsers:</p>
+			<div>
+				<hr>
+				<ul>
+					<li>Desktop:
+						<ul>
+							<li>Safari 16 or higher</li>
+							<li>Chrome 108 or higher</li>
+							<li>Microsoft Edge 108 or higher</li>
+						</ul>
+					</li>
+					<li>Mobile:
+						<ul>
+							<li>Mobile Safari 16 or higher</li>
+							<li>Chrome 108 or higher</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</td>
+	</tr>
+</table>
+<![endif]-->
+
+<!-- JavaScript -->
+<script type="text/javascript" src="bowser.min.js"></script>
+<script type="text/javascript" src="fmwebd_oauth_script.js"></script>
+<script type="text/javascript">
+	// Default Variables
+	var webdirectHome = 'https://web.example.com/mysolution2023-oauth/index.html';
+	var forceHTTPS = true;
+	var dbName = "FMPD-11291";
+
+	// Bowser Settings
+	const filemaker = {
+		desktop: {
+			safari: '>=16',
+			chrome: '>=108',
+			microsoftedge: '>=108'
+		},
+		mobile: {
+			safari: '>=16',
+			chrome: '>=108'
+		}
+	}
+
+	function initOAuth() {
+		getProviderInfo(function(providerInfo) {
+			// Generate OAuth UI from the list of supported providers
+			// Here we just hardcode one button for Google OAuth
+			if (providerInfo != null && providerInfo != "") {
+				let button = document.createElement("button");
+				button.innerHTML = 'Open ' + dbName;
+				button.style.width = '150px';
+				button.style.height = '30px';
+				button.dataset.provider = providerInfo;
+				button.onclick = function() {
+					showOAuthLogin("Google");
+				}
+				
+				let oauthWrapper = document.getElementById("oauth");
+				oauthWrapper.appendChild(button);
+			}
+		});
+	}
+	
+	function showOAuthLogin(providerName) {
+		let child = window.open("", "Google", "width=800, height=600");
+		let trackingId = "123432";
+		let master = window.location.hostname;
+		
+		getOAuthURL(trackingId, master, providerName, function(oauthUrl, requestId) {
+			child.location.replace(oauthUrl);
+			
+			// Listen to localstorage event to receive response from OAuth provider
+			window.addEventListener("storage", function processOAuthResponse(event) {
+				// Response from OAuth provider
+				// Sample format: "trackingID=123432&identifier=83FF55EF5B8B1442D702C19DF63115BC&error=0"
+				let response = event.newValue;
+				
+				let retTrackingId = getOAuthResponseParameter(response, 'trackingID');
+				
+				// Compare tracking ID against returned one to make sure
+				// this is the correct response to process
+				if (trackingId = retTrackingId) {
+					window.removeEventListener("storage", processOAuthResponse);
+					localStorage.removeItem('oauth-response');
+					doOAuthLogin(dbName, requestId, getOAuthResponseParameter(response, 'identifier'), '', getOAuthResponseParameter(response, 'error'));
+				}
+			});
+		});
+	}
+    	
+	// Sample format: "trackingID=123432&identifier=83FF55EF5B8B1442D702C19DF63115BC&error=0"
+	function getOAuthResponseParameter(input, parameter) {
+		if (input != null) {
+			var params, pair, i;
+			
+			params = input.split('&');  
+			for (i in params) {
+				pair = params[i].split('=');
+				if (pair != null && pair.length == 2) {
+					if (pair[0] == parameter) {
+						return pair[1];
+					}
+				}
+			}
+		}
+		return "";
+	}
+
+	document.addEventListener("DOMContentLoaded", function() {
+		const browser = bowser.getParser(window.navigator.userAgent);
+		const platform = browser.satisfies( filemaker );
+
+		/* Detect Browser
+		 * Prevent Non-WebDirect Browsers from Accessing FileMaker
+		 * FMS 19: https://community.claris.com/en/s/article/FileMaker-Server-19-System-Requirements
+		 */
+		if( platform == false || platform == undefined ) {
+			document.getElementById('browserInvalid').style.display = 'table-row';
+			document.getElementById('browserValid').style.display = 'none';
+			document.getElementById('browser-version').innerHTML = '<strong>Your browser is</strong> '+browser.getBrowserName()+': '+browser.getBrowserVersion();
+		} else {
+			document.getElementById('browserInvalid').style.display = 'none';
+			document.getElementById('browserValid').style.display = 'table-row';
+
+			/* OPTIONAL: Force to HTTPS if using HTTP
+			 * Good for servers where both HTTP and HTTPS are enabled and HTTP is not being forced to HTTPS
+			 * IMPORTANT: Make sure webdirectHome and webdirect is set to an HTTPS or browser will go into forever loop
+			 * If you do not wish to force to HTTPS, set variable forceHTTPS = false
+			 */
+			if( forceHTTPS == true ){
+				if( document.location.protocol && document.location.protocol == 'http:' ){
+					window.location = webdirectHome;
+				}
+			}
+		}
+
+		initOAuth();
+	});
+</script>
+
+</body>
+</html>
