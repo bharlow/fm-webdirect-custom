@@ -109,6 +109,24 @@
 	var webdirectHome = 'https://web.example.com/mysolution2025-oauth/index.html';
 	var forceHTTPS = true;
 	var dbName = "FMPD-11291";
+	
+	var OauthWindowFeatures = "";
+	var OauthAsPopup = false;	// Enables Popup [default: false|disabled] set to true to enable.
+	var WindowWidth = 300;		// INT New Window Width in Pixels
+	var WindowHeight = 600;		// INT New Window Height in Pixels
+
+	if (OauthAsPopup) {
+		const OauthWindowFeaturesValues = {
+			height : WindowHeight,
+			width : WindowWidth,
+			top : ((screen.height - WindowHeight) / 2) || 0,
+			left : ((screen.width - WindowWidth) / 2) || 0
+		}
+
+		OauthWindowFeatures = Object.keys(OauthWindowFeaturesValues).map(key => {
+			return `${key}=${OauthWindowFeaturesValues[key]}`;
+		}).join(', ');
+	}
 
 	// Bowser Settings
 	const filemaker = {
@@ -144,7 +162,7 @@
 	}
 	
 	function showOAuthLogin(providerName) {
-		let child = window.open("", "Google", "width=800, height=600");
+		let child = window.open("", "_blank", OauthWindowFeatures);
 		let trackingId = "123432";
 		let master = window.location.hostname;
 		
@@ -168,6 +186,8 @@
 				}
 			});
 		});
+
+		if (window.focus) child.focus();
 	}
     	
 	// Sample format: "trackingID=123432&identifier=83FF55EF5B8B1442D702C19DF63115BC&error=0"
